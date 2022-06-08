@@ -20,6 +20,7 @@ fun Star2438() {
 }
 
 fun Star2439() {
+
     val sc: Scanner = Scanner(System.`in`)
 
     val A = sc.nextInt()
@@ -31,9 +32,14 @@ fun Star2439() {
 
     // 줄바꿈을 한다
 
-    for (i in A downTo 1 ) {
+    for (i in 1..A) {
+        for (k in A - i downTo 1) {
+            print(" ")
+        }
+        for (z in 1..i) {
+            print("*")
+        }
         println()
-        for (j in 1 .. A)
     }
 }
 
