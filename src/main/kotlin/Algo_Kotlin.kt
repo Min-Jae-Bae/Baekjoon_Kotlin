@@ -1,7 +1,7 @@
 import java.util.Scanner
 
 fun main() {
-    Star2439()
+    Star2440()
 }
 
 // 백준 2438번
@@ -11,14 +11,15 @@ fun Star2438() {
 
     val A = sc.nextInt()
 
-    for (i in 1..A) {
+    for (i in 0 until A) {
         println()
-        for (j in 1..i) {
+        for (j in 0 until i) {
             print("*")
         }
     }
 }
 
+// 백준 2439번
 fun Star2439() {
 
     val sc: Scanner = Scanner(System.`in`)
@@ -32,11 +33,26 @@ fun Star2439() {
 
     // 줄바꿈을 한다
 
-    for (i in 1..A) {
+    for (i in 0 until A) {
         for (k in A - i downTo 1) {
             print(" ")
         }
-        for (z in 1..i) {
+        for (z in 0 until i) {
+            print("*")
+        }
+        println()
+    }
+}
+
+
+// 백준 2440번
+fun Star2440() {
+
+    val sc: Scanner = Scanner(System.`in`)
+    val N = sc.nextInt()
+
+    for (i in 0 until N) {
+        for (k in 0 until N-i) {
             print("*")
         }
         println()
