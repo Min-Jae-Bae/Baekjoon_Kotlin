@@ -1,7 +1,7 @@
 import java.util.Scanner
 
 fun main() {
-    Star2440()
+    Star2441()
 }
 
 // 백준 2438번
@@ -59,4 +59,22 @@ fun Star2440() {
     }
 }
 
+// 백준 2441번
+fun Star2441() {
+
+    val sc: Scanner = Scanner(System.`in`)
+    val N = sc.nextInt()
+
+    for (i in 0 until N) {
+
+        for (z in 0 until i) {
+            print(" ")
+        }
+
+        for (k in 0 until N - i) {
+            print("*")
+        }
+        println()
+    }
+}
 
