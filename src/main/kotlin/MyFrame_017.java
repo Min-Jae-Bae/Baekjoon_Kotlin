@@ -327,7 +327,6 @@ class MouseListenerEx_017 extends JFrame {
 
 
 //예제 9-5
-
 class MouseAdapterEx_017 extends JFrame {
     JLabel la_017 = new JLabel("Hello");
 
@@ -379,3 +378,149 @@ class MouseAdapterEx_017 extends JFrame {
         new MouseAdapterEx_017();
     }
 }
+
+// 예제 9-6
+class KeyCharEx_017 extends JFrame {
+    JLabel la_017 = new JLabel("9-6");
+
+    KeyCharEx_017() {
+        super("9-6");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container c_017 = getContentPane();
+        c_017.setLayout(new FlowLayout());
+        c_017.add(la_017);
+        c_017.addKeyListener(new MyKeyListener_017());
+        setSize(250, 150);
+        setVisible(true);
+        c_017.setFocusable(true); // 포커스를 받을 수 있도록 설정
+
+        c_017.requestFocus(); // 컨텐트팬에 포커스 설정
+    }
+
+    class MyKeyListener_017 extends KeyAdapter {
+        public void keyPressed(KeyEvent e) {
+            int r_017 = (int) (Math.random() * 256);
+            int g_017 = (int) (Math.random() * 256);
+            int b_017 = (int) (Math.random() * 256);
+
+            switch (e.getKeyChar()) { // 입력된 키 문자
+                case '\n': // <Enter> 키 입력
+                    la_017.setText("r_017=" + r_017 + ", g_017=" + g_017 + ", b_017=" + b_017);
+                    getContentPane().setBackground(
+                            new Color(r_017, g_017, b_017));
+                    break;
+                case 'q': // q를 입력하면 종료
+                    System.exit(0);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new KeyCharEx_017();
+    }
+}
+
+//예제 9-7
+class FlyingTextEx_017 extends JFrame {
+    JLabel la_017 = new JLabel("9-6");
+
+    FlyingTextEx_017() {
+        super("9-7");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container c_017 = getContentPane();
+        c_017.setLayout(null);
+        c_017.add(la_017);
+        c_017.addKeyListener(new MyKeyListener_017());
+
+        la_017.setLocation(50, 50);
+        la_017.setSize(100, 20);
+        c_017.add(la_017);
+
+        setSize(250, 150);
+        setVisible(true);
+
+        c_017.requestFocus(); // 컨텐트팬에 포커스 설정
+    }
+
+    class MyKeyListener_017 extends KeyAdapter {
+        public void keyPressed(KeyEvent e) {
+            int keyCode_017 = e.getKeyCode(); // 입력된 키코드
+            switch (keyCode_017) {
+                case KeyEvent.VK_UP:
+                    la_017.setLocation(la_017.getX(), la_017.getY() - 10);
+                    break;
+                case KeyEvent.VK_DOWN:
+                    la_017.setLocation(la_017.getX(), la_017.getY() + 10);
+                    break;
+                case KeyEvent.VK_LEFT:
+                    la_017.setLocation(la_017.getX() - 10, la_017.getY());
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    la_017.setLocation(la_017.getX() + 10, la_017.getY());
+                    break;
+
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new FlyingTextEx_017();
+    }
+}
+
+
+//마우스 이벤트 처리 예 1 ~ 8
+class MouseEventAllEx_017 extends JFrame {
+    JLabel la_017 = new JLabel(" Move Me");
+
+    MouseEventAllEx_017() {
+        setTitle("예제 8개");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container c_017 = getContentPane();
+        MyMouseListener listener = new MyMouseListener();
+        c_017.addMouseListener(listener);
+        c_017.addMouseMotionListener(listener);
+
+        c_017.setLayout(null);
+
+        la_017.setSize(80, 20);
+        la_017.setLocation(100, 80);
+        c_017.add(la_017); // 레이블 컴포넌트 삽입
+
+        setSize(300, 200);
+        setVisible(true);
+    }
+
+    class MyMouseListener implements MouseListener, MouseMotionListener {
+        public void mousePressed(MouseEvent e) {
+            la_017.setLocation(e.getX(), e.getY());
+            setTitle("mousePressed("+e.getX()+","+e.getY()+")");
+        }
+        public void mouseReleased(MouseEvent e) {
+            la_017.setLocation(e.getX(), e.getY());
+            setTitle("mouseReleased("+e.getX()+","+e.getY()+")");
+        }
+        public void mouseClicked(MouseEvent e) {}
+        public void mouseEntered(MouseEvent e) {
+            Component comp_017 = (Component)e.getSource();
+            comp_017.setBackground(Color.CYAN);
+        }
+        public void mouseExited(MouseEvent e) {
+            Component comp_017 = (Component)e.getSource();
+            comp_017.setBackground(Color.YELLOW);
+        }
+        public void mouseDragged(MouseEvent e) {
+            la_017.setLocation(e.getX(), e.getY());
+            setTitle("mouseDragged("+e.getX()+","+e.getY()+")");
+        }
+        public void mouseMoved(MouseEvent e) {
+            la_017.setLocation(e.getX(), e.getY());
+            setTitle("mouseMoved ("+e.getX()+","+e.getY()+")");
+        }
+    }
+
+        public static void main(String[] args) {
+            new MouseEventAllEx_017();
+        }
+
+    }

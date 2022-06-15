@@ -246,5 +246,21 @@ class B extends A {
 * public void mouseClicked(MouseEvent e); 마우스 클릭되는 순간
 * public void mouseEntered(MouseEvent e); 컴포넌트 위에 올리는 순간
 * public void mouseExited(MouseEvent e); 컴포넌트 위에서 내려오는 순간
-* */
+*
+*
+* key 이벤트와 포커스: key 이벤트 발생:
+* 키를 누르는 순간, 누른 키를 떼는 순간
+*
+* 키 이벤트를 받을 수 있는 조건: 모든 컴포넌트, 현재 포커를 가진 컴포넌트가 키 이벤트 독점
+*
+* 유니코드 키: 전 세계의 문자를 컴퓨터에서 일관되게 표현하기 위한 코드 체계
+* 유니코드 키가 입력되는 경우: keyPressed() -> keyTyped() -> keyReleased() 순서대로 호출
+* 유니코드 아닌 경우: keyPressed() -> keyReleased() 순서대로 호출
+ *
+ * Mouse 이벤트의 메소드 호출 순서
+ * 누르고 -> 떼고 -> 클릭
+ *
+ * 드래그 경우:
+ * 누르고 -> 드래그 -> 떼고
+ * */
 
