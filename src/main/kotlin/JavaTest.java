@@ -143,7 +143,7 @@ class B extends A {
  * String a = new String("Hello"); -> 힙에 생성, 공유되지 않음, 수정 불가능
  * 스트링 비교는: 반드시 equals() 사용
  *
- * cotains(): 문자열 포함 확인
+ * contains(): 문자열 포함 확인
  * concat(): 문자열 연결
  * trim(): 문자열 앞 뒤의 공백 제거
  * replace(): 문자열 대치
@@ -155,7 +155,7 @@ class B extends A {
  * StringBuffer sb = new StringBuffer("java");
  *
  * StringTokenizer(구분 문자 기준으로 문자열 분리)
- * StringToeknizer st = new StringTokenizer(query, "&"); -> &문자 기준으로 분리
+ * StringTokenizer st = new StringTokenizer(query, "&"); -> &문자 기준으로 분리
  * st.countTokens(); -> 토큰 갯수
  * st.nextToken(); -> 다음 토큰
  *
@@ -220,7 +220,7 @@ class B extends A {
  * 최상위 컨테이너(JFrame) -> 컨테이너 -> 컴포넌트
  *
  * 스윙 GUI 만드는 과정: 프레임 만들기 -> 메인 메소드 작성 -> 컴포넌트 붙이기
- * 스윙 import문:
+ * 스윙 import:
  * import java.awt.*; 그래픽 처리
  * import java.awt.event.*; 이벤트 사용
  * import javax.swing.*; 스윙 컴포넌트 사용
