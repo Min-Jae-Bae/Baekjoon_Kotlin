@@ -1,10 +1,10 @@
-import java.util.Scanner
+import java.util.*
 
 fun main() {
-    Star2441()
+    Star2442()
 }
 
-// 백준 2438번
+// 백준 2438번, 6월 12일
 fun Star2438() {
 
     val sc: Scanner = Scanner(System.`in`)
@@ -19,7 +19,7 @@ fun Star2438() {
     }
 }
 
-// 백준 2439번
+// 백준 2439번, 6월 13일
 fun Star2439() {
 
     val sc: Scanner = Scanner(System.`in`)
@@ -45,7 +45,7 @@ fun Star2439() {
 }
 
 
-// 백준 2440번
+// 백준 2440번, 6월 14일
 fun Star2440() {
 
     val sc: Scanner = Scanner(System.`in`)
@@ -59,7 +59,7 @@ fun Star2440() {
     }
 }
 
-// 백준 2441번
+// 백준 2441번, 6월 15일
 fun Star2441() {
 
     val sc: Scanner = Scanner(System.`in`)
@@ -78,3 +78,21 @@ fun Star2441() {
     }
 }
 
+//백준 2442번, 6월 17일
+fun Star2442() {
+
+    val sc: Scanner = Scanner(System.`in`)
+    val N = sc.nextInt()
+
+    for (i in 0 until N) {
+
+        for (z in 0 until N - i) {
+            print(" ")
+        }
+
+        for (k in 0 until (2 * i) + 1) {
+            print("*")
+        }
+        println()
+    }
+}
