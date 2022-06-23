@@ -1,7 +1,7 @@
 import java.util.*
 
 fun main() {
-    Star2442()
+    Star2443()
 }
 
 // 백준 2438번, 6월 12일
@@ -91,6 +91,26 @@ fun Star2442() {
         }
 
         for (k in 0 until (2 * i) + 1) {
+            print("*")
+        }
+        println()
+    }
+}
+
+//백준 2443번, 6월 23일
+
+fun Star2443() {
+
+    val sc: Scanner = Scanner(System.`in`)
+    val N = sc.nextInt()
+
+    for (i in 0 until N) { // 총 5번 반복
+
+        for (z in 0 until i) { //띄어쓰기 0 ~ 5번
+            print(" ")
+        }
+
+        for (k in 9 downTo (2 * i) + 1) { // 0번째 일 때 9번 반복 -> 홀수로 간다.
             print("*")
         }
         println()
