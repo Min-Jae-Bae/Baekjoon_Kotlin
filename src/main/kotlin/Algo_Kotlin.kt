@@ -1,7 +1,7 @@
 import java.util.*
 
 fun main() {
-    Star2443()
+    Algo5598()
 }
 
 // 백준 2438번, 6월 12일
@@ -52,7 +52,7 @@ fun Star2440() {
     val N = sc.nextInt()
 
     for (i in 0 until N) {
-        for (k in 0 until N-i) {
+        for (k in 0 until N - i) {
             print("*")
         }
         println()
@@ -114,5 +114,48 @@ fun Star2443() {
             print("*")
         }
         println()
+    }
+}
+
+//백준 2444번, 6월 24일
+
+fun Star2444() {
+
+    val sc: Scanner = Scanner(System.`in`)
+    val N = sc.nextInt()
+
+    for (i in 0 until N) {
+
+        for (z in 1 until N - i) {
+            print(" ")
+        }
+
+        for (k in 0 until (2 * i) + 1) {
+            print("*")
+        }
+        println()
+    }
+
+    for (i in 0 until N - 1) { // 총 4번 반복
+
+        for (z in 0 until i + 1) { //띄어쓰기 0 ~ 4번
+            print(" ")
+        }
+
+        for (k in 7 downTo (2 * i) + 1) { // 0번째 일 때 9번 반복 -> 홀수로 간다.
+            print("*")
+        }
+        println()
+    }
+}
+
+//백준 5598번 6월 27일
+fun Algo5598() {
+
+    val sc: Scanner = Scanner(System.`in`)
+    val str = sc.next()
+
+    for (element in str) {
+        print((element.code - 3).toChar().toString())
     }
 }
